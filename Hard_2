@@ -27,6 +27,10 @@ s = input()
 output = shortest(s)
 print(output)
 
+Result :
+s = abc
+cbabc
+
 
 
 
