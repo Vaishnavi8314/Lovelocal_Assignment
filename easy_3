@@ -1,0 +1,34 @@
+Question : 
+Given an integer numRows, return the first numRows of Pascal's triangle.In Pascal's triangle, each number is the sum of the two numbers directly above.
+
+Algorithm :
+1.An integer numRows representing the number of rows to generate is the input.
+2.Initialize an empty list triangle to store the rows of Pascal's Triangle.
+3.If numRows is 0, return an empty list ([]).
+4.For each row from 1 to numRows(exclusive) , initialize prev as the last row in triangle or [1] if triangle is empty.
+5.Initialize an empty list current with the first element as 1.
+6.For each element at index j from 1 to i-1 (exclusive) in the current row:
+7.Append the sum of prev[j - 1] and prev[j] to current.
+8.Append 1 to the end of current.
+9.Append current_row to triangle.
+10.Return the generated Pascal's Triangle.
+
+Code : (Python)
+
+def triangle(numRows):
+    if numRows == 0:
+        return []
+    triangle = [[1]]
+    for i in range(1, numRows):
+        prev = triangle[-1]
+        current_row = [1]
+        for j in range(1, i):
+            current_row.append(prev[j - 1] + prev[j])
+        current_row.append(1)
+        triangle.append(current_row)
+    return triangle
+
+Result :
+numRows = 3
+[[1],[1, 1],[1, 2, 1]]
+
