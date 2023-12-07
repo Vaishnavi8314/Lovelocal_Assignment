@@ -1,0 +1,27 @@
+Question : Given a string s consisting of words and spaces, return the length of the last word in the string.
+A word is a maximal substring consisting of non-space characters only.
+
+Logic : 
+The given string input is splitted using split() function which creates a list of words, then using indexing and len() built-in function the length of the last word of the string is calaculated and printed as an output.
+
+Algorithm :
+1. Give the input string.
+2. Split the string using split() function.
+3. If the list is empty , return 0.
+4. If the list is not empty , the length of the last word is given using the function len() and indexing is -1.The command looks like len(words[-1]).
+5. The length of the last word of the input string is returned.
+
+Code (Python):
+def last_word(sentence):
+   word = sentence.split()
+   if not word:
+        return 0
+   return len(word[-1])
+a = input()
+word_length = last_word(a)
+print(word_length)
+
+Result : 
+Input :  Assignment is done.
+Output : 4
+
