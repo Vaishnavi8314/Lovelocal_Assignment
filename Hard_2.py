@@ -6,6 +6,6 @@ def shortest(s):
     while i >= 0 and not palindrome(s[:i + 1]):
         i -= 1
     return s[i + 1:][::-1] + s
-s = input()
+s = input("s=")
 output = shortest(s)
 print(output)
