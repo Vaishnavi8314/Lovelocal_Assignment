@@ -31,6 +31,10 @@ nums = list(map(int, user_input.strip('[]').split(',')))
 output = number(nums)
 print(output)
 
+Result :
+nums =  [3,2,3]
+[3]
+
 
 
 
