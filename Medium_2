@@ -1,0 +1,38 @@
+Question : Given an integer array of size n, find all elements that appear more than [n/3] times.
+
+Logic :
+The array is given as input and is converted to a list of individual elements.These elements are converted to a integer using map(int,..) function.A dictionary is declared to store the frequency of each element and a set is declared to store elements appearing more than n/3 times.The set obtained is converted into a list and then it is returned.
+
+Algorithm :
+1.The input contains the elements of an array as a string and then the square brackets from the input are removed to get a comma-separated string.
+2.Split the string based on commas to get a list of individual elements as strings.
+3.Convert each string element to an integer using map(int,..) function.
+4.Initialize a dictionary to store the frequency of each element and an empty set to store elements appearing more than ⌊ n/3 ⌋ times.
+5.Count the frequency of each element in the list and store it in dictionary.
+6.Check if the frequency of each element is greater than [n/3] and add elements meeting the condition to the set.
+7.Convert the set to a list and return it.
+8.Print the list returned.
+
+Code : (Python)
+
+def number(nums):
+    n = len(nums)
+    condition = n // 3
+    freq_map = {}
+    result = set()
+    for x in nums:
+        freq_map[x] = freq_map.get(x, 0) + 1
+    for x, count in freq_map.items():
+        if count > condition:
+            result.add(x)
+    return list(result)
+user_input = input("nums =  ")
+nums = list(map(int, user_input.strip('[]').split(',')))
+output = number(nums)
+print(output)
+
+
+
+
+
+
