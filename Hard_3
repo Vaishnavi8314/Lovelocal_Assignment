@@ -35,3 +35,7 @@ def digit(n):
 n = int(input("n = "))
 result = digit(n)
 print(result)
+
+Result :
+n = 20
+12
