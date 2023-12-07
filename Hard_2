@@ -1,0 +1,37 @@
+Question : 
+You are given a string s. You can convert s to a palindrome by adding characters in front of it.Return the shortest palindrome you can find by performing this transformation.
+
+Logic :
+A string is taken as input and is checked whether it is a palindrome or not.If it is not a palindrome, the string is iterated from backward.For each position i , the substring s[:i+1] is checked if it is a palindrome or not.The iteration is stopped when the longest palindrome prefix is found.The shortest palindrome is made by taking the reverse of the remaining part of the string and adding it to the beginning of the string.
+
+Algorithm :
+1.A string s is taken as input.
+2.Define a function palidrome(string) that checks whether the given string is palindrome by comparing it with the reverse of the string.
+3.Initialize a variable i to the length of s-1.
+4.Decrement i by 1.
+5.Iterate while i is greater than or equal to zero and s[:i+1] is not a palindrome.Decrement i by 1.
+6.If i<0 then return the reverse of string.If not,return the reverse of the remaining part of the string (s[i+1:]) added to the original string.
+7.Print the obtained palindrome.
+
+Code: (Python)
+
+def shortest(s):
+    def palindrome(word):
+        return word == word[::-1]
+    n = len(s)
+    i = n - 1
+    while i >= 0 and not palindrome(s[:i + 1]):
+        i -= 1
+    return s[i + 1:][::-1] + s
+s = input()
+output = shortest(s)
+print(output)
+
+
+
+
+
+
+
+
+
